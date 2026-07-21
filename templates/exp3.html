@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Experiment 3</title>
+<style>body{font-family:Arial;background:#f4f6f9}.container{max-width:1000px;margin:30px auto;background:#fff;padding:30px;box-shadow:0 0 10px #bbb}h1{text-align:center;color:#003366}h2{color:#006400}pre{background:#1e1e1e;color:#0f9;padding:15px;border-radius:8px}button{background:#007BFF;color:#fff;padding:10px 20px;border:none;border-radius:5px}input{padding:8px;width:80px}#output{display:none;background:#eee;padding:15px;border-left:5px solid green;margin-top:15px}.back{display:inline-block;margin-top:20px;background:#28a745;color:#fff;padding:10px 20px;text-decoration:none}table{width:100%;border-collapse:collapse}table,th,td{border:1px solid #888}th,td{padding:8px}th{background:#007BFF;color:#fff}</style></head><body><div class="container">
+<h1>Virtual Object-Oriented Programming Laboratory</h1><h2>Experiment 3 : Operator Overloading</h2>
+<h2>Aim</h2><p>To implement operator overloading for addition of two complex numbers in C++.</p>
+<h2>Objective</h2><p>To understand how the '+' operator can be overloaded for user-defined classes.</p>
+<h2>Theory</h2><p>Operator overloading allows existing operators to work with objects. Here the '+' operator is overloaded to add the real and imaginary parts of two complex numbers.</p>
+<h2>Algorithm</h2><ol><li>Start.</li><li>Read the real and imaginary parts of two complex numbers.</li><li>Create two Complex objects.</li><li>Overload '+' to add corresponding real and imaginary values.</li><li>Display the resultant complex number.</li><li>Stop.</li></ol>
+<h2>Program</h2><pre>#include &lt;iostream&gt;
+using namespace std;
+class Complex{
+ int real,imag;
+public:
+ Complex(int r=0,int i=0){real=r;imag=i;}
+ Complex operator+(Complex const &obj){
+  Complex res;
+  res.real=real+obj.real;
+  res.imag=imag+obj.imag;
+  return res;
+ }
+ void print(){ cout&lt;&lt;real&lt;&lt;" + i"&lt;&lt;imag; }
+};
+int main(){
+ int r1,i1,r2,i2;
+ cout&lt;&lt;"Enter first complex number (real imag): ";
+ cin&gt;&gt;r1&gt;&gt;i1;
+ cout&lt;&lt;"Enter second complex number (real imag): ";
+ cin&gt;&gt;r2&gt;&gt;i2;
+ Complex c1(r1,i1),c2(r2,i2);
+ Complex c3=c1+c2;
+ c3.print();
+}</pre>
+<h2>Virtual Execution</h2>
+First Complex:<br><input id="r1" type="number" placeholder="Real"> <input id="i1" type="number" placeholder="Imag"><br><br>
+Second Complex:<br><input id="r2" type="number" placeholder="Real"> <input id="i2" type="number" placeholder="Imag"><br><br>
+<button onclick="runProgram()">▶ Run Program</button> <button onclick="resetProgram()">Reset</button>
+<div id="output"><h3>Program Output</h3><pre id="result"></pre></div>
+<h2>Result</h2><p>Thus the operator overloading program executed successfully and the sum of two complex numbers was displayed.</p>
+<h2>Viva Questions</h2><table><tr><th>No.</th><th>Question</th></tr><tr><td>1</td><td>What is operator overloading?</td></tr><tr><td>2</td><td>Which operators cannot be overloaded?</td></tr><tr><td>3</td><td>Why is '+' overloaded here?</td></tr><tr><td>4</td><td>What is a constructor?</td></tr><tr><td>5</td><td>What is a class?</td></tr></table>
+<h2>Exercises</h2><ul><li>Overload '-' for complex numbers.</li><li>Overload '*' for complex numbers.</li><li>Overload '==' for comparison.</li></ul>
+<a class="back" href="/">⬅ Back to Home</a></div>
+<script>
+function runProgram(){
+let r1=+document.getElementById('r1').value,i1=+document.getElementById('i1').value,r2=+document.getElementById('r2').value,i2=+document.getElementById('i2').value;
+if([document.getElementById('r1').value,document.getElementById('i1').value,document.getElementById('r2').value,document.getElementById('i2').value].includes("")){alert("Enter all values");return;}
+document.getElementById('result').textContent=`First Complex Number : ${r1} + i${i1}
+Second Complex Number : ${r2} + i${i2}
+Result : ${r1+r2} + i${i1+i2}`;
+document.getElementById('output').style.display='block';
+}
+function resetProgram(){['r1','i1','r2','i2'].forEach(id=>document.getElementById(id).value='');document.getElementById('output').style.display='none';document.getElementById('result').textContent='';}
+</script></body></html>
