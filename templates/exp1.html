@@ -1,178 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Experiment 1 - Switch Case</title>
-
 <style>
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f6f9;
-    margin:0;
-}
-
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:30px auto;
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 12px rgba(0,0,0,0.2);
-}
-
-h1{
-    text-align:center;
-    color:#003366;
-}
-
-h2{
-    color:#006400;
-    border-bottom:2px solid #ccc;
-    padding-bottom:5px;
-}
-
-pre{
-    background:#1e1e1e;
-    color:#00ff99;
-    padding:15px;
-    border-radius:8px;
-    overflow:auto;
-    font-size:15px;
-}
-
-button{
-
-    background:#007BFF;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:17px;
-}
-
-button:hover{
-
-    background:#0056b3;
-}
-
-#output{
-
-    display:none;
-    margin-top:20px;
-    background:#eeeeee;
-    border-left:5px solid green;
-    padding:15px;
-    font-size:18px;
-}
-
-.back{
-
-    display:inline-block;
-    margin-top:30px;
-    text-decoration:none;
-    background:#28a745;
-    color:white;
-    padding:12px 20px;
-    border-radius:5px;
-}
-
-.back:hover{
-
-    background:#1f7d34;
-}
-
-table{
-
-    width:100%;
-    border-collapse:collapse;
-}
-
-table,th,td{
-
-    border:1px solid gray;
-}
-
-th{
-
-    background:#007BFF;
-    color:white;
-}
-
-th,td{
-
-    padding:10px;
-}
-
+body{font-family:Arial,sans-serif;background:#f4f6f9;margin:0}
+.container{max-width:1000px;margin:30px auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px #bbb}
+h1{text-align:center;color:#003366}
+h2{color:#006400;border-bottom:2px solid #ccc;padding-bottom:5px}
+pre{background:#1e1e1e;color:#00ff99;padding:15px;border-radius:8px;overflow:auto}
+button{background:#007BFF;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer}
+button:hover{background:#0056b3}
+input{padding:10px;font-size:16px;width:220px}
+#output{display:none;background:#eee;border-left:5px solid green;padding:15px;margin-top:15px}
+.back{display:inline-block;margin-top:25px;background:#28a745;color:#fff;text-decoration:none;padding:10px 20px;border-radius:5px}
+table{width:100%;border-collapse:collapse}
+table,th,td{border:1px solid #888}
+th,td{padding:8px}
+th{background:#007BFF;color:#fff}
 </style>
-
 </head>
-
 <body>
-
 <div class="container">
-
 <h1>Virtual Object-Oriented Programming Laboratory</h1>
-
 <h2>Experiment 1 : Switch Case Statement</h2>
 
 <h2>Aim</h2>
-
-<p>
-
-To write a C++ program using the Switch Case statement to display eligibility for voting.
-
-</p>
+<p>To write a C++ program using the switch-case statement to determine whether a person is eligible to vote based on age.</p>
 
 <h2>Objective</h2>
-
-<p>
-
-To understand the working of the switch-case decision-making statement in C++.
-
-</p>
+<p>To understand the working of the switch statement along with user input and decision making.</p>
 
 <h2>Theory</h2>
-
-<p>
-
-The switch statement is a multi-way selection statement.
-It compares the value of an expression with different case labels.
-When a matching case is found, that block is executed.
-The break statement terminates the switch block.
-If none of the cases match, the default block executes.
-
-</p>
+<p>The switch statement selects one block of code from multiple alternatives. In this experiment, the user's age is first converted into a choice value (0 or 1), and the switch statement displays the corresponding message.</p>
 
 <h2>Algorithm</h2>
-
 <ol>
-
 <li>Start the program.</li>
-
-<li>Declare an integer variable.</li>
-
-<li>Assign value 18.</li>
-
-<li>Use switch statement.</li>
-
-<li>Check each case.</li>
-
-<li>Display corresponding message.</li>
-
-<li>Terminate the program.</li>
-
+<li>Declare an integer variable <b>age</b>.</li>
+<li>Read the age from the user.</li>
+<li>If age is greater than or equal to 18, assign <b>choice = 1</b>; otherwise assign <b>choice = 0</b>.</li>
+<li>Use a switch statement with <b>choice</b>.</li>
+<li>If choice is 1, display <b>Eligible to Vote</b>.</li>
+<li>If choice is 0, display <b>Not Eligible to Vote</b>.</li>
+<li>Stop the program.</li>
 </ol>
 
 <h2>Program</h2>
-
 <pre>
-
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -209,158 +85,53 @@ int main()
 </pre>
 
 <h2>Virtual Execution</h2>
-
-<label><strong>Enter Age:</strong></label><br><br>
-
-<input type="number" id="age" placeholder="Enter your age"
-       style="padding:10px; width:220px; font-size:16px;">
-
+<label><b>Enter Age:</b></label><br><br>
+<input type="number" id="age" placeholder="Enter your age">
 <br><br>
-
 <button onclick="runProgram()">▶ Run Program</button>
-
-<div id="output"
-     style="display:none;
-            margin-top:20px;
-            background:#eeeeee;
-            border-left:5px solid green;
-            padding:15px;">
-
-<h3>Program Output</h3>
-
-<pre id="result"></pre>
-
-</div>
-
-<script>
-
-function runProgram()
-{
-    let age = document.getElementById("age").value;
-
-    if(age === "")
-    {
-        alert("Please enter your age.");
-        return;
-    }
-
-    let output = "";
-
-    if(age >= 18)
-        output = "Eligible to Vote";
-    else
-        output = "Not Eligible to Vote";
-
-    document.getElementById("result").innerHTML = output;
-    document.getElementById("output").style.display = "block";
-}
-</pre>
-
-<br>
-
-<button onclick="runProgram()">▶ Run Program</button>
+<button onclick="resetProgram()">Reset</button>
 
 <div id="output">
-
 <h3>Program Output</h3>
-
-<pre>
-
-Eligible for vote
-
-</pre>
-
+<pre id="result"></pre>
 </div>
 
 <h2>Result</h2>
-
-<p>
-
-Thus the C++ program using the Switch Case statement was executed successfully and the expected output was obtained.
-
-</p>
+<p>The switch-case program executed successfully and displayed the voting eligibility based on the entered age.</p>
 
 <h2>Viva Questions</h2>
-
 <table>
-
-<tr>
-
-<th>No.</th>
-
-<th>Question</th>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>What is a switch statement?</td>
-
-</tr>
-
-<tr>
-
-<td>2</td>
-
-<td>Why is break used?</td>
-
-</tr>
-
-<tr>
-
-<td>3</td>
-
-<td>What is the purpose of the default case?</td>
-
-</tr>
-
-<tr>
-
-<td>4</td>
-
-<td>Can switch be used with floating-point values?</td>
-
-</tr>
-
-<tr>
-
-<td>5</td>
-
-<td>Difference between if-else and switch?</td>
-
-</tr>
-
+<tr><th>No.</th><th>Question</th></tr>
+<tr><td>1</td><td>What is a switch statement?</td></tr>
+<tr><td>2</td><td>Why is break used in switch?</td></tr>
+<tr><td>3</td><td>What is the purpose of the default case?</td></tr>
+<tr><td>4</td><td>Can switch check ranges directly?</td></tr>
+<tr><td>5</td><td>What is the difference between if-else and switch?</td></tr>
 </table>
 
 <h2>Exercises</h2>
-
 <ul>
-
-<li>Create a simple calculator using switch-case.</li>
-
-<li>Display the month name using switch-case.</li>
-
-<li>Display the day of the week using switch-case.</li>
-
+<li>Modify the program to display grades using switch.</li>
+<li>Create a simple calculator using switch.</li>
+<li>Display the day of the week using switch.</li>
 </ul>
 
 <a href="/" class="back">⬅ Back to Home</a>
-
 </div>
 
 <script>
-
-function runProgram()
-{
-
-document.getElementById("output").style.display="block";
-
+function runProgram(){
+ let age=document.getElementById("age").value;
+ if(age===""){alert("Please enter your age.");return;}
+ let msg=(parseInt(age)>=18)?"Eligible to Vote":"Not Eligible to Vote";
+ document.getElementById("result").textContent="Enter your age: "+age+"\n"+msg;
+ document.getElementById("output").style.display="block";
 }
-
+function resetProgram(){
+ document.getElementById("age").value="";
+ document.getElementById("result").textContent="";
+ document.getElementById("output").style.display="none";
+}
 </script>
-
 </body>
-
 </html>
