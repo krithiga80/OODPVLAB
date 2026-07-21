@@ -1,0 +1,42 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Experiment 4</title><style>
+body{font-family:Arial;background:#f4f6f9}.container{max-width:1000px;margin:30px auto;background:#fff;padding:30px;box-shadow:0 0 10px #bbb}
+h1{text-align:center;color:#036}h2{color:#060}pre{background:#1e1e1e;color:#0f9;padding:15px;border-radius:8px}
+input,button{padding:10px}button{background:#07f;color:#fff;border:none;border-radius:5px}#output{display:none;background:#eee;border-left:5px solid green;padding:15px;margin-top:15px}
+table{width:100%;border-collapse:collapse}table,th,td{border:1px solid #888}th,td{padding:8px}th{background:#07f;color:#fff}.back{display:inline-block;margin-top:20px;background:#28a745;color:#fff;padding:10px 20px;text-decoration:none}
+</style></head><body><div class="container">
+<h1>Virtual Object-Oriented Programming Laboratory</h1>
+<h2>Experiment 4 : Exception Handling</h2>
+<h2>Aim</h2><p>To demonstrate exception handling in C++ by checking division by zero.</p>
+<h2>Objective</h2><p>To understand try, throw and catch blocks in C++.</p>
+<h2>Theory</h2><p>Exception handling transfers control to a catch block whenever an error occurs. This improves program reliability.</p>
+<h2>Algorithm</h2><ol><li>Start.</li><li>Read two integers.</li><li>Use a try block.</li><li>If divisor is zero, throw a runtime exception.</li><li>Otherwise perform division.</li><li>Catch and display the exception message.</li><li>Stop.</li></ol>
+<h2>Program</h2><pre>#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+using namespace std;
+int main(){
+ int x,y;
+ cout&lt;&lt;"Enter dividend: "; cin&gt;&gt;x;
+ cout&lt;&lt;"Enter divisor: "; cin&gt;&gt;y;
+ try{
+   if(y==0) throw runtime_error("Divide by zero exception");
+   cout&lt;&lt;"Result = "&lt;&lt;x/y;
+ }
+ catch(const runtime_error &e){
+   cout&lt;&lt;"Exception: "&lt;&lt;e.what();
+ }
+ return 0;
+}</pre>
+<h2>Virtual Execution</h2>
+<label>Dividend:</label><br><input id="x" type="number"><br><br>
+<label>Divisor:</label><br><input id="y" type="number"><br><br>
+<button onclick="runProgram()">▶ Run Program</button>
+<button onclick="resetProgram()">Reset</button>
+<div id="output"><h3>Program Output</h3><pre id="result"></pre></div>
+<h2>Result</h2><p>Thus, the exception handling program executed successfully and handled divide-by-zero conditions.</p>
+<h2>Viva Questions</h2><table><tr><th>No.</th><th>Question</th></tr><tr><td>1</td><td>What is an exception?</td></tr><tr><td>2</td><td>What is the purpose of try?</td></tr><tr><td>3</td><td>What does throw do?</td></tr><tr><td>4</td><td>What is catch?</td></tr><tr><td>5</td><td>Why is exception handling important?</td></tr></table>
+<h2>Exercises</h2><ul><li>Handle invalid age input.</li><li>Create multiple catch blocks.</li><li>Throw a user-defined exception.</li></ul>
+<a class="back" href="/">⬅ Back to Home</a></div>
+<script>
+function runProgram(){let x=document.getElementById('x').value,y=document.getElementById('y').value;if(x===""||y===""){alert("Enter both values");return;}let out=(parseInt(y)===0)?"Exception: Divide by zero exception":"Result = "+(parseInt(x)/parseInt(y));document.getElementById('result').textContent=out;document.getElementById('output').style.display='block';}
+function resetProgram(){x.value="";y.value="";result.textContent="";output.style.display="none";}
+</script></body></html>
