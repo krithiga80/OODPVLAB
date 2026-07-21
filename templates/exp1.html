@@ -2,67 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment 1 - Switch Case</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 20px;
-            line-height: 1.6;
-        }
+<title>Experiment 1 - Switch Case</title>
 
-        .container {
-            width: 90%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-        }
+<style>
 
-        h1 {
-            text-align: center;
-            color: darkblue;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
 
-        h2 {
-            color: darkgreen;
-            border-bottom: 2px solid gray;
-            padding-bottom: 5px;
-        }
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 12px rgba(0,0,0,0.2);
+}
 
-        pre {
-            background: #272822;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
+h1{
+    text-align:center;
+    color:#003366;
+}
 
-        .output {
-            background: #eeeeee;
-            color: black;
-            padding: 10px;
-            border-left: 5px solid green;
-        }
+h2{
+    color:#006400;
+    border-bottom:2px solid #ccc;
+    padding-bottom:5px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: darkblue;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+pre{
+    background:#1e1e1e;
+    color:#00ff99;
+    padding:15px;
+    border-radius:8px;
+    overflow:auto;
+    font-size:15px;
+}
 
-        .button:hover {
-            background: green;
-        }
-    </style>
+button{
+
+    background:#007BFF;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+button:hover{
+
+    background:#0056b3;
+}
+
+#output{
+
+    display:none;
+    margin-top:20px;
+    background:#eeeeee;
+    border-left:5px solid green;
+    padding:15px;
+    font-size:18px;
+}
+
+.back{
+
+    display:inline-block;
+    margin-top:30px;
+    text-decoration:none;
+    background:#28a745;
+    color:white;
+    padding:12px 20px;
+    border-radius:5px;
+}
+
+.back:hover{
+
+    background:#1f7d34;
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+
+    border:1px solid gray;
+}
+
+th{
+
+    background:#007BFF;
+    color:white;
+}
+
+th,td{
+
+    padding:10px;
+}
+
+</style>
 
 </head>
 
@@ -72,45 +119,60 @@
 
 <h1>Virtual Object-Oriented Programming Laboratory</h1>
 
-<h2>Experiment 1: Switch Case Statement</h2>
+<h2>Experiment 1 : Switch Case Statement</h2>
 
 <h2>Aim</h2>
 
 <p>
-To write a C++ program using the <strong>switch-case</strong> statement to display eligibility for voting.
+
+To write a C++ program using the Switch Case statement to display eligibility for voting.
+
 </p>
 
 <h2>Objective</h2>
 
 <p>
+
 To understand the working of the switch-case decision-making statement in C++.
+
 </p>
 
 <h2>Theory</h2>
 
 <p>
-The <strong>switch</strong> statement is a multi-way decision control statement.
-It allows a variable or expression to be tested against multiple constant values.
-When a matching case is found, the corresponding block of statements is executed.
-The <strong>break</strong> statement terminates the switch block.
-If none of the cases match, the <strong>default</strong> case is executed.
+
+The switch statement is a multi-way selection statement.
+It compares the value of an expression with different case labels.
+When a matching case is found, that block is executed.
+The break statement terminates the switch block.
+If none of the cases match, the default block executes.
+
 </p>
 
 <h2>Algorithm</h2>
 
 <ol>
+
 <li>Start the program.</li>
+
 <li>Declare an integer variable.</li>
-<li>Assign a value to the variable.</li>
-<li>Use the switch statement.</li>
-<li>Compare the variable with each case.</li>
-<li>Display the corresponding message.</li>
+
+<li>Assign value 18.</li>
+
+<li>Use switch statement.</li>
+
+<li>Check each case.</li>
+
+<li>Display corresponding message.</li>
+
 <li>Terminate the program.</li>
+
 </ol>
 
 <h2>Program</h2>
 
 <pre>
+
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -120,58 +182,134 @@ int main()
 
     switch(var)
     {
+
         case 15:
+
             cout &lt;&lt; "You are a kid";
             break;
 
         case 18:
+
             cout &lt;&lt; "Eligible for vote";
             break;
 
         default:
+
             cout &lt;&lt; "Default Case is executed";
             break;
+
     }
 
     return 0;
 }
+
 </pre>
 
-<h2>Sample Output</h2>
+<br>
 
-<div class="output">
+<button onclick="runProgram()">▶ Run Program</button>
+
+<div id="output">
+
+<h3>Program Output</h3>
+
+<pre>
+
 Eligible for vote
+
+</pre>
+
 </div>
 
 <h2>Result</h2>
 
 <p>
-Thus, the C++ program using the switch-case statement was executed successfully and the expected output was obtained.
+
+Thus the C++ program using the Switch Case statement was executed successfully and the expected output was obtained.
+
 </p>
 
 <h2>Viva Questions</h2>
 
-<ol>
-<li>What is a switch statement?</li>
-<li>Why is the break statement used?</li>
-<li>What happens if break is omitted?</li>
-<li>What is the purpose of the default case?</li>
-<li>Can switch work with floating-point values?</li>
-</ol>
+<table>
+
+<tr>
+
+<th>No.</th>
+
+<th>Question</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>What is a switch statement?</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>Why is break used?</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>What is the purpose of the default case?</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Can switch be used with floating-point values?</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>Difference between if-else and switch?</td>
+
+</tr>
+
+</table>
 
 <h2>Exercises</h2>
 
 <ul>
-<li>Modify the program to display the day of the week using numbers 1–7.</li>
-<li>Create a calculator using switch-case for addition, subtraction, multiplication, and division.</li>
-<li>Write a program to display the month name using switch-case.</li>
+
+<li>Create a simple calculator using switch-case.</li>
+
+<li>Display the month name using switch-case.</li>
+
+<li>Display the day of the week using switch-case.</li>
+
 </ul>
 
-<br>
-
-<a href="/" class="button">⬅ Back to Home</a>
+<a href="/" class="back">⬅ Back to Home</a>
 
 </div>
 
+<script>
+
+function runProgram()
+{
+
+document.getElementById("output").style.display="block";
+
+}
+
+</script>
+
 </body>
+
 </html>
