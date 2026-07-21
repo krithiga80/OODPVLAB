@@ -185,7 +185,7 @@ int main()
 
     int choice;
 
-    if (age &gt;= 18)
+    if(age &gt;= 18)
         choice = 1;
     else
         choice = 0;
@@ -205,6 +205,54 @@ int main()
     }
 
     return 0;
+}
+</pre>
+
+<h2>Virtual Execution</h2>
+
+<label><strong>Enter Age:</strong></label><br><br>
+
+<input type="number" id="age" placeholder="Enter your age"
+       style="padding:10px; width:220px; font-size:16px;">
+
+<br><br>
+
+<button onclick="runProgram()">▶ Run Program</button>
+
+<div id="output"
+     style="display:none;
+            margin-top:20px;
+            background:#eeeeee;
+            border-left:5px solid green;
+            padding:15px;">
+
+<h3>Program Output</h3>
+
+<pre id="result"></pre>
+
+</div>
+
+<script>
+
+function runProgram()
+{
+    let age = document.getElementById("age").value;
+
+    if(age === "")
+    {
+        alert("Please enter your age.");
+        return;
+    }
+
+    let output = "";
+
+    if(age >= 18)
+        output = "Eligible to Vote";
+    else
+        output = "Not Eligible to Vote";
+
+    document.getElementById("result").innerHTML = output;
+    document.getElementById("output").style.display = "block";
 }
 </pre>
 
