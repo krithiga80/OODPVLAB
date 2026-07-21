@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Virtual OOP Lab</title>
+</head>
+
+<body>
+
+    <h1>Virtual Object-Oriented Programming Laboratory</h1>
+
+    <h2>List of Experiments</h2>
+
+    <ul>
+
+        {% for exp in experiments %}
+
+        <li>
+
+            <a href="/experiment/{{ exp.id }}">
+
+                {{ exp.title }} - {{ exp.name }}
+
+            </a>
+
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+</body>
+
+</html>
