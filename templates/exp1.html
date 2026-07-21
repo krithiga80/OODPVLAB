@@ -107,3 +107,71 @@ If none of the cases match, the <strong>default</strong> case is executed.
 <li>Display the corresponding message.</li>
 <li>Terminate the program.</li>
 </ol>
+
+<h2>Program</h2>
+
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int var = 18;
+
+    switch(var)
+    {
+        case 15:
+            cout &lt;&lt; "You are a kid";
+            break;
+
+        case 18:
+            cout &lt;&lt; "Eligible for vote";
+            break;
+
+        default:
+            cout &lt;&lt; "Default Case is executed";
+            break;
+    }
+
+    return 0;
+}
+</pre>
+
+<h2>Sample Output</h2>
+
+<div class="output">
+Eligible for vote
+</div>
+
+<h2>Result</h2>
+
+<p>
+Thus, the C++ program using the switch-case statement was executed successfully and the expected output was obtained.
+</p>
+
+<h2>Viva Questions</h2>
+
+<ol>
+<li>What is a switch statement?</li>
+<li>Why is the break statement used?</li>
+<li>What happens if break is omitted?</li>
+<li>What is the purpose of the default case?</li>
+<li>Can switch work with floating-point values?</li>
+</ol>
+
+<h2>Exercises</h2>
+
+<ul>
+<li>Modify the program to display the day of the week using numbers 1–7.</li>
+<li>Create a calculator using switch-case for addition, subtraction, multiplication, and division.</li>
+<li>Write a program to display the month name using switch-case.</li>
+</ul>
+
+<br>
+
+<a href="/" class="button">⬅ Back to Home</a>
+
+</div>
+
+</body>
+</html>

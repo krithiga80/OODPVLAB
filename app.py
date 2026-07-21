@@ -10,21 +10,27 @@ experiments = [
     {"id": 5, "title": "Experiment 5", "name": "File Handling"}
 ]
 
+# Home Page
+@app.route("/")
+def home():
+    return render_template("index.html", experiments=experiments)
+
+# Experiment Pages
 @app.route("/experiment/<int:id>")
 def experiment(id):
     exp = experiments[id - 1]
 
     if id == 1:
         return render_template("exp1.html", exp=exp)
-
     elif id == 2:
         return render_template("exp2.html", exp=exp)
-
     elif id == 3:
         return render_template("exp3.html", exp=exp)
-
     elif id == 4:
         return render_template("exp4.html", exp=exp)
-
     elif id == 5:
         return render_template("exp5.html", exp=exp)
+
+# Run the application
+if __name__ == "__main__":
+    app.run(debug=True)
