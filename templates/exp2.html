@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experiment 2 - Pointers</title>
+<style>
+body{font-family:Arial;background:#f4f6f9;margin:0}.container{max-width:1000px;margin:30px auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 0 10px #bbb}
+h1{text-align:center;color:#003366}h2{color:#006400;border-bottom:2px solid #ccc}
+pre{background:#1e1e1e;color:#00ff99;padding:15px;border-radius:8px;overflow:auto}
+button{background:#007BFF;color:#fff;border:none;padding:10px 20px;border-radius:5px;cursor:pointer}
+button:hover{background:#0056b3}input{padding:10px;width:220px}#output{display:none;background:#eee;border-left:5px solid green;padding:15px;margin-top:15px}
+table{width:100%;border-collapse:collapse}table,th,td{border:1px solid #888}th,td{padding:8px}th{background:#007BFF;color:#fff}
+.back{display:inline-block;margin-top:20px;background:#28a745;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px}
+</style></head><body><div class="container">
+<h1>Virtual Object-Oriented Programming Laboratory</h1>
+<h2>Experiment 2 : Pointers</h2>
+<h2>Aim</h2><p>To demonstrate the use of pointers by storing and accessing the address and value of a variable.</p>
+<h2>Objective</h2><p>To understand pointer declaration, initialization and dereferencing in C++.</p>
+<h2>Theory</h2><p>A pointer stores the memory address of another variable. The '&' operator obtains an address and the '*' operator accesses the value stored at that address.</p>
+<h2>Algorithm</h2><ol><li>Start.</li><li>Declare integer variable <b>num</b>.</li><li>Read a number from the user.</li><li>Declare pointer <b>ptr</b>.</li><li>Store the address of <b>num</b> in <b>ptr</b>.</li><li>Display the value of <b>num</b>, address of <b>num</b>, pointer value and value pointed to by the pointer.</li><li>Stop.</li></ol>
+<h2>Program</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+
+    int *ptr = &amp;num;
+
+    cout &lt;&lt; "Value of num: " &lt;&lt; num &lt;&lt; endl;
+    cout &lt;&lt; "Address of num: " &lt;&lt; &amp;num &lt;&lt; endl;
+    cout &lt;&lt; "Value of ptr: " &lt;&lt; ptr &lt;&lt; endl;
+    cout &lt;&lt; "Value pointed by ptr: " &lt;&lt; *ptr &lt;&lt; endl;
+
+    return 0;
+}</pre>
+<h2>Virtual Execution</h2>
+<label><b>Enter a Number:</b></label><br><br>
+<input type="number" id="num" placeholder="Enter a number"><br><br>
+<button onclick="runProgram()">▶ Run Program</button>
+<button onclick="resetProgram()">Reset</button>
+<div id="output"><h3>Program Output</h3><pre id="result"></pre></div>
+<h2>Result</h2><p>Thus, the C++ program demonstrating pointers was executed successfully.</p>
+<h2>Viva Questions</h2>
+<table><tr><th>No.</th><th>Question</th></tr>
+<tr><td>1</td><td>What is a pointer?</td></tr>
+<tr><td>2</td><td>What does '&amp;' operator do?</td></tr>
+<tr><td>3</td><td>What does '*' operator do?</td></tr>
+<tr><td>4</td><td>Why are pointers used?</td></tr>
+<tr><td>5</td><td>Can a pointer point to another pointer?</td></tr></table>
+<h2>Exercises</h2><ul><li>Swap two numbers using pointers.</li><li>Add two numbers using pointers.</li><li>Demonstrate pointer arithmetic.</li></ul>
+<a class="back" href="/">⬅ Back to Home</a>
+</div>
+<script>
+function runProgram(){
+ let n=document.getElementById('num').value;
+ if(n===""){alert("Please enter a number.");return;}
+ let addr="0x1000";
+ document.getElementById('result').textContent=
+`Enter a number: ${n}
+Value of num: ${n}
+Address of num: ${addr}
+Value of ptr: ${addr}
+Value pointed by ptr: ${n}`;
+ document.getElementById('output').style.display='block';
+}
+function resetProgram(){
+ document.getElementById('num').value="";
+ document.getElementById('result').textContent="";
+ document.getElementById('output').style.display='none';
+}
+</script></body></html>
