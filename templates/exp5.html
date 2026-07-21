@@ -1,0 +1,54 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Experiment 5 - Inline Function</title>
+<style>
+body{font-family:Arial;background:#f4f6f9}.container{max-width:1000px;margin:30px auto;background:#fff;padding:30px;box-shadow:0 0 10px #bbb}
+h1{text-align:center;color:#036}h2{color:#060}pre{background:#1e1e1e;color:#0f9;padding:15px;border-radius:8px}
+input,button{padding:10px}button{background:#07f;color:#fff;border:none;border-radius:5px}#output{display:none;background:#eee;border-left:5px solid green;padding:15px;margin-top:15px}
+table{width:100%;border-collapse:collapse}table,th,td{border:1px solid #888}th,td{padding:8px}th{background:#07f;color:#fff}.back{display:inline-block;margin-top:20px;background:#28a745;color:#fff;padding:10px 20px;text-decoration:none}
+</style></head><body><div class="container">
+<h1>Virtual Object-Oriented Programming Laboratory</h1>
+<h2>Experiment 5 : Inline Function</h2>
+<h2>Aim</h2><p>To write a C++ program using an inline function to calculate the square of a number.</p>
+<h2>Objective</h2><p>To understand inline functions and their use in reducing function call overhead.</p>
+<h2>Theory</h2><p>An inline function requests the compiler to expand the function code at the point of call, making small functions efficient.</p>
+<h2>Algorithm</h2><ol><li>Start.</li><li>Declare an inline function <b>square()</b>.</li><li>Read an integer from the user.</li><li>Call the inline function.</li><li>Display the square of the number.</li><li>Stop.</li></ol>
+<h2>Program</h2><pre>#include &lt;iostream&gt;
+using namespace std;
+
+inline int square(int x)
+{
+    return x * x;
+}
+
+int main()
+{
+    int num;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; num;
+
+    int res = square(num);
+
+    cout &lt;&lt; "Square = " &lt;&lt; res;
+
+    return 0;
+}</pre>
+<h2>Virtual Execution</h2>
+<label>Enter a Number:</label><br><input id="num" type="number"><br><br>
+<button onclick="runProgram()">▶ Run Program</button>
+<button onclick="resetProgram()">Reset</button>
+<div id="output"><h3>Program Output</h3><pre id="result"></pre></div>
+<h2>Result</h2><p>Thus, the C++ program using an inline function executed successfully and displayed the square of the entered number.</p>
+<h2>Viva Questions</h2><table><tr><th>No.</th><th>Question</th></tr>
+<tr><td>1</td><td>What is an inline function?</td></tr>
+<tr><td>2</td><td>Why are inline functions used?</td></tr>
+<tr><td>3</td><td>Who decides whether to inline a function?</td></tr>
+<tr><td>4</td><td>Can recursive functions be inline?</td></tr>
+<tr><td>5</td><td>Difference between normal and inline functions?</td></tr>
+</table>
+<h2>Exercises</h2><ul><li>Find cube using an inline function.</li><li>Create an inline function to find the maximum of two numbers.</li><li>Use inline functions with floating-point values.</li></ul>
+<a class="back" href="/">⬅ Back to Home</a>
+</div>
+<script>
+function runProgram(){let n=document.getElementById('num').value;if(n===""){alert("Please enter a number.");return;}document.getElementById('result').textContent=`Enter a number: ${n}
+Square = ${parseInt(n)*parseInt(n)}`;output.style.display='block';}
+function resetProgram(){num.value="";result.textContent="";output.style.display="none";}
+</script></body></html>
