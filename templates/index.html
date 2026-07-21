@@ -2,125 +2,331 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Virtual OODP Laboratory</title>
+<title> Object Oriented Design and Programming Virtual Lab</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
 
-    background:#eef2f7;
+background:#eef3f8;
+
 }
+
+/* Header */
 
 header{
 
-    background:#003366;
-    color:white;
-    padding:20px;
-    text-align:center;
+background:linear-gradient(135deg,#003366,#007BFF);
+
+color:white;
+
+padding:30px;
+
+text-align:center;
+
+}
+
+.logo{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:white;
+
+padding:5px;
+
+margin-bottom:10px;
+
 }
 
 header h1{
 
-    font-size:34px;
+font-size:34px;
+
+margin-top:10px;
+
 }
 
-header p{
+header h2{
 
-    margin-top:8px;
-    font-size:18px;
+margin-top:10px;
+
+font-size:26px;
+
 }
+
+header h3{
+
+font-weight:normal;
+
+margin-top:5px;
+
+}
+
+/* Container */
 
 .container{
 
-    width:90%;
-    max-width:1200px;
-    margin:40px auto;
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
 }
+
+/* Faculty Section */
+
+.faculty{
+
+background:white;
+
+margin-top:35px;
+
+padding:25px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:30px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+.faculty img{
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+border:5px solid #007BFF;
+
+object-fit:cover;
+
+}
+
+.faculty h2{
+
+color:#007BFF;
+
+margin-bottom:10px;
+
+}
+
+.faculty h1{
+
+color:#003366;
+
+}
+
+.faculty h3{
+
+margin-top:8px;
+
+color:#555;
+
+}
+
+.faculty p{
+
+margin-top:8px;
+
+font-size:17px;
+
+line-height:1.6;
+
+}
+
+/* Statistics */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.stat{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+}
+
+.stat h1{
+
+font-size:42px;
+
+color:#007BFF;
+
+}
+
+.stat h3{
+
+margin-top:10px;
+
+color:#003366;
+
+}
+
+/* Cards */
 
 .cards{
 
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+margin-bottom:40px;
+
 }
 
 .card{
 
-    background:white;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
-    overflow:hidden;
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+transition:.3s;
+
 }
 
 .card:hover{
 
-    transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+transform:translateY(-10px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
 }
 
 .card-header{
 
-    background:#007BFF;
-    color:white;
-    padding:18px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
+background:#007BFF;
+
+color:white;
+
+padding:18px;
+
+font-size:22px;
+
+text-align:center;
+
+font-weight:bold;
+
 }
 
 .card-body{
 
-    padding:25px;
+padding:25px;
+
 }
 
 .card-body h3{
 
-    color:#003366;
-    margin-bottom:15px;
+color:#003366;
+
+margin-bottom:15px;
+
 }
 
 .card-body p{
 
-    color:#555;
-    line-height:1.6;
+color:#555;
+
+line-height:1.6;
+
 }
 
 .btn{
 
-    display:inline-block;
-    margin-top:20px;
-    text-decoration:none;
-    background:#28a745;
-    color:white;
-    padding:12px 22px;
-    border-radius:8px;
-    font-size:16px;
-    transition:0.3s;
+display:inline-block;
+
+margin-top:20px;
+
+background:#28a745;
+
+color:white;
+
+padding:12px 22px;
+
+text-decoration:none;
+
+border-radius:8px;
+
+transition:.3s;
+
 }
 
 .btn:hover{
 
-    background:#1f7d34;
+background:#1f7d34;
+
 }
+
+/* Footer */
 
 footer{
 
-    margin-top:50px;
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:15px;
+background:#003366;
+
+color:white;
+
+text-align:center;
+
+padding:18px;
+
+margin-top:20px;
+
 }
 
 </style>
@@ -131,13 +337,95 @@ footer{
 
 <header>
 
-<h1> Object Oriented Design and Programming Virtual Lab</h1>
+<img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
 
-<p></p>
+<h1>SRM Institute of Science and Technology, Kattankulathur</h1>
+
+<h3>Department of Electronics and Communication Engineering</h3>
+
+<h2> /h2>
 
 </header>
 
 <div class="container">
+
+<!-- Faculty -->
+
+<div class="faculty">
+
+<img src="{{ url_for('static', filename='images/my pic.JPG') }}">
+
+<div>
+
+<h2>Developed & Launched By</h2>
+
+<h1>Dr. S. Krithiga</h1>
+
+<h3>Associate Professor</h3>
+
+<p>
+
+Department of ECE
+
+</p>
+
+<p>
+
+This Virtual Laboratory provides an interactive environment for students to perform Object-Oriented Design Programming experiments online.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="stat">
+
+<h1>5</h1>
+
+<h3>Experiments</h3>
+
+</div>
+
+<div class="stat">
+
+<h1>💻</h1>
+
+<h3>Interactive Programs</h3>
+
+</div>
+
+<div class="stat">
+
+<h1>❓</h1>
+
+<h3>Viva Questions</h3>
+
+</div>
+
+<div class="stat">
+
+<h1>📝</h1>
+
+<h3>Exercises</h3>
+
+</div>
+
+<div class="stat">
+
+<h1>🌐</h1>
+
+<h3>Virtual Learning</h3>
+
+</div>
+
+</div>
+
+<!-- Experiment Cards -->
 
 <div class="cards">
 
@@ -163,7 +451,7 @@ footer{
 
 <a href="/experiment/{{ exp.id }}" class="btn">
 
-Explore
+▶ Explore
 
 </a>
 
@@ -179,7 +467,19 @@ Explore
 
 <footer>
 
-© 2025 Virtual Object-Oriented Programming Laboratory
+<h3> Object Oriented Design and Programming Virtual Lab</h3>
+
+<p>
+
+Developed & Launched by <b>Dr. S. Krithiga</b>
+
+</p>
+
+<p>
+
+© 2025 All Rights Reserved
+
+</p>
 
 </footer>
 
