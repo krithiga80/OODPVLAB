@@ -1,33 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Virtual OOP Lab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virtual OODP Laboratory</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#eef2f7;
+}
+
+header{
+
+    background:#003366;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+
+    font-size:34px;
+}
+
+header p{
+
+    margin-top:8px;
+    font-size:18px;
+}
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+    overflow:hidden;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card-header{
+
+    background:#007BFF;
+    color:white;
+    padding:18px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.card-body{
+
+    padding:25px;
+}
+
+.card-body h3{
+
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.card-body p{
+
+    color:#555;
+    line-height:1.6;
+}
+
+.btn{
+
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    background:#28a745;
+    color:white;
+    padding:12px 22px;
+    border-radius:8px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+
+    background:#1f7d34;
+}
+
+footer{
+
+    margin-top:50px;
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <h1>Virtual Object-Oriented Programming Laboratory</h1>
+<header>
 
-    <h2>List of Experiments</h2>
+<h1>Virtual Object-Oriented Programming Laboratory</h1>
 
-    <ul>
+<p>Object Oriented Design Programming (OODP) Virtual Lab</p>
 
-        {% for exp in experiments %}
+</header>
 
-        <li>
+<div class="container">
 
-            <a href="/experiment/{{ exp.id }}">
+<div class="cards">
 
-                {{ exp.title }} - {{ exp.name }}
+{% for exp in experiments %}
 
-            </a>
+<div class="card">
 
-        </li>
+<div class="card-header">
 
-        {% endfor %}
+{{ exp.title }}
 
-    </ul>
+</div>
+
+<div class="card-body">
+
+<h3>{{ exp.name }}</h3>
+
+<p>
+
+Click the button below to perform the experiment, view the theory,
+algorithm, C++ program, execute the virtual experiment,
+and observe the output.
+
+</p>
+
+<a href="/experiment/{{ exp.id }}" class="btn">
+
+Open Experiment
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<footer>
+
+© 2025 Virtual Object-Oriented Programming Laboratory
+
+</footer>
 
 </body>
 

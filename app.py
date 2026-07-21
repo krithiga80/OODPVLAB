@@ -3,11 +3,31 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 experiments = [
-    {"id": 1, "title": "Experiment 1", "name": "Switch Case Statement"},
-    {"id": 2, "title": "Experiment 2", "name": "Pointers"},
-    {"id": 3, "title": "Experiment 3", "name": "Operator Overloading"},
-    {"id": 4, "title": "Experiment 4", "name": "Exception Handling"},
-    {"id": 5, "title": "Experiment 5", "name": "Inline Function"}
+    {
+        "id":1,
+        "title":"Experiment 1",
+        "name":"Switch Case Statement"
+    },
+    {
+        "id":2,
+        "title":"Experiment 2",
+        "name":"Pointers"
+    },
+    {
+        "id":3,
+        "title":"Experiment 3",
+        "name":"Operator Overloading"
+    },
+    {
+        "id":4,
+        "title":"Experiment 4",
+        "name":"Exception Handling"
+    },
+    {
+        "id":5,
+        "title":"Experiment 5",
+        "name":"Inline Function"
+    }
 ]
 
 # Home Page
