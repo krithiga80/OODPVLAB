@@ -178,31 +178,34 @@ using namespace std;
 
 int main()
 {
-    int var = 18;
+    int age;
 
-    switch(var)
+    cout &lt;&lt; "Enter your age: ";
+    cin &gt;&gt; age;
+
+    int choice;
+
+    if (age &gt;= 18)
+        choice = 1;
+    else
+        choice = 0;
+
+    switch(choice)
     {
-
-        case 15:
-
-            cout &lt;&lt; "You are a kid";
+        case 0:
+            cout &lt;&lt; "Not Eligible to Vote";
             break;
 
-        case 18:
-
-            cout &lt;&lt; "Eligible for vote";
+        case 1:
+            cout &lt;&lt; "Eligible to Vote";
             break;
 
         default:
-
-            cout &lt;&lt; "Default Case is executed";
-            break;
-
+            cout &lt;&lt; "Invalid Input";
     }
 
     return 0;
 }
-
 </pre>
 
 <br>
